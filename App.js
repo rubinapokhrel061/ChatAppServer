@@ -28,11 +28,6 @@ io.on("connection", (socket) => {
       user: "Admin",
       message: `${users[socket.id]} has joined`,
     });
-
-    socket.emit("welcome", {
-      user: "Admin",
-      message: `Welcome to the Chat ,${users[socket.id]}`,
-    });
   });
   socket.on("message", ({ message, id }) => {
     io.emit("sendMessage", { user: users[id], message, id });
