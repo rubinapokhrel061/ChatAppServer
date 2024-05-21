@@ -9,10 +9,15 @@ const server = createServer(app);
 const users = [{}];
 const io = new Server(server, {
   cors: {
-    origin: "https://chat-app-rust-sigma.vercel.app/",
+    origin: "https://chat-app-rust-sigma.vercel.app",
     methods: ["GET", "POST"],
     credentials: true,
   },
+  // app.use(
+  //   cors({
+  //     origin: "*",
+  //   })
+  // );
 });
 app.use(cors());
 
